@@ -1,0 +1,8 @@
+sudo nano firebase_code.py
+sudo python firebase_code.py
+
+
+cd RPi_Cam_Web_Interface
+./start.sh
+
+sudo ifup eth0
