@@ -8,7 +8,7 @@ import json
 import serial
 
 ser = serial.Serial('/dev/ttyACM0', 115200)	
-url = 'https://ualberta-ecocar.firebaseio.com/PiData.json'
+url = 'https://ualberta-ecocar.firebaseio.com/readings.json'
 
 
 while 1:
@@ -16,6 +16,7 @@ while 1:
 	postdata = {
     		'time': str(calendar.timegm(time.gmtime())),
     		'data': x
+    		"""
     		'fc_error' : x[0]
 			'fc_state' : x[2]
 			'fc_purge_count' : x[4]
@@ -37,6 +38,7 @@ while 1:
 			'fc_motor_relay' : x[36]
 			'fc_purge_valve' : x[38]
 			'fc_h2_valve' : x[40]
+			"""
 		}
  
 	req = urllib2.Request(url)
